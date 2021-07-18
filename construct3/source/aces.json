@@ -1,0 +1,61 @@
+﻿{
+	"Advertisement": {
+		"conditions": [
+			{
+				"c2id": 1,
+				"id": "ad-finished",
+				"scriptName": "adFinished",
+				"isTrigger": "true"
+			},
+			{
+				"c2id": 0,
+				"id": "ad-error",
+				"scriptName": "adError",
+				"isTrigger": "true"
+			}
+		],
+		"actions": [
+			{
+				"c2id": 0,
+				"id": "show-ad",
+				"scriptName": "commercialbreak"
+			},
+			{
+				"c2id": 1,
+				"id": "rewardedbreak",
+				"scriptName": "rewardedbreak"
+			}
+		]
+	},
+	"Gameplay": {
+		"actions": [
+			{
+				"c2id": 2,
+				"id": "gameplay",
+				"scriptName": "gameplay",
+				"params": [
+					{"id":"gameplay", "type":"combo", "items":["gameplayStart","gameplayStop"]}
+				]
+			}
+		]
+	},
+	"Etc": {
+		"actions": [
+			{
+				"c2id": 3,
+				"id": "happytime",
+				"scriptName": "happytime",
+				"params": [
+					{"id":"scale", "type":"number"}
+				]
+			}
+		],
+		"conditions": [
+			{
+				"c2id": 2,
+				"id": "adblock",
+				"scriptName": "adblock"
+			}
+		]
+	}
+}

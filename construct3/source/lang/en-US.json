@@ -1,0 +1,73 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "pokigames plugin",
+	"text": {
+		"plugins": {
+			"eren_poki": {
+				"name": "poki",
+				"description": "poki plugin",
+				"help-url": "https://www.github.com/erenertugrul",
+				"properties": {
+					"debug_mode": {
+						"name": "debug mode",
+						"desc": "this is necessary for ads to be shown in a local environment",
+						"items": {
+							"false":"False",
+							"true":"True"
+							}
+						}
+				},
+				"aceCategories": {
+					"Advertisement": "Advertisement",
+					"Gameplay": "Gameplay Tracks",
+					"Etc": "Etc"
+				},
+				"conditions": {
+					"ad-finished": {
+						"list-name": "On Finished",
+						"display-text": "On Finished",
+						"description": "Triggered when an advertisement stops playing"
+					},
+					"ad-error": {
+						"list-name": "On Error",
+						"display-text": "On Error",
+						"description": "Triggered when an error has occurred. This event is also triggered when no advertisement is available"
+					},
+					"adblock": {
+						"list-name": "Adblock Detection",
+						"display-text": "Adblock Detection",
+						"description": "Detect whether the user has installed an adblock tool"
+					}
+				},
+				"actions": {
+					"show-ad": {
+						"list-name": "Commercial break",
+						"display-text": "commercialBreak",
+						"description": "Commercial breaks are used to display video ads and should be triggered on natural breaks in your game"
+					},
+					"rewardedbreak": {
+						"list-name": "Rewarded breaks",
+						"display-text": "Rewarded breaks",
+						"description": "Rewarded breaks allow for a user to choose to watch a rewarded video ad in exchange for a certain benefit in the game"
+					},
+					"gameplay": {
+						"list-name": "Gameplay Track",
+						"display-text": "{0}",
+						"description": "Track when and how users are playing your games",
+						"params": {
+							"gameplay": { "name":"gameplay", "desc":" gameplay track", "items":{"gameplayStart":"Gameplay Start","gameplayStop":"Gameplay Stop"}}
+						}
+					},
+					"happytime": {
+						"list-name": "Happy Time",
+						"display-text": "Happy time! {0}",
+						"description": "scale is 0.0 to 1.0",
+						"params": {
+							"scale": { "name":"happytime scale", "desc":"0 to 1"}
+						}
+					}
+				}
+			}
+		}
+	}
+}
