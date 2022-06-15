@@ -3,15 +3,19 @@
 {
 	self.C3.Plugins.eren_poki.Cnds =
 	{
-		adError()
+		OnInit()
 		{
 			return true;
 		},
-		adFinished()
+		AdFinished()
 		{
 			return true;
 		},
-		adblock()
+		AdError()
+		{
+			return true;
+		},
+		Adblock()
 		{
 			return this.adblock;
 		}

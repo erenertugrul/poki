@@ -4,13 +4,19 @@
 			{
 				"c2id": 1,
 				"id": "ad-finished",
-				"scriptName": "adFinished",
+				"scriptName": "AdFinished",
 				"isTrigger": "true"
 			},
 			{
 				"c2id": 0,
 				"id": "ad-error",
-				"scriptName": "adError",
+				"scriptName": "AdError",
+				"isTrigger": "true"
+			},
+			{
+				"c2id": 3,
+				"id": "ad-init",
+				"scriptName": "OnInit",
 				"isTrigger": "true"
 			}
 		],
@@ -54,7 +60,7 @@
 			{
 				"c2id": 2,
 				"id": "adblock",
-				"scriptName": "adblock"
+				"scriptName": "Adblock"
 			}
 		]
 	}

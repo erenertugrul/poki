@@ -5,8 +5,8 @@
 	"id": "eren_poki",
 	"version": "1.0.0.0",
 	"author": "Eren Ertugrul",
-	"website": "https://github.com/erenertugrul",
-	"documentation": "https://github.com/erenertugrul",
+	"website": "https://github.com/erenertugrul/poki",
+	"documentation": "https://github.com/erenertugrul/poki",
 	"description": "pokigames plugin",
 	"editor-scripts": [
 						"plugin.js",
@@ -17,17 +17,16 @@
 		"c3runtime/plugin.js",
 		"c3runtime/type.js",
 		"c3runtime/instance.js",
+		"c3runtime/domSide.js",
 		"c3runtime/conditions.js",
 		"c3runtime/actions.js",
 		"c3runtime/expressions.js",
-		"c2runtime/runtime.js",
 		"lang/en-US.json",
 		"aces.json",
 		"addon.json",
 		"icon.png",
-		"instance.js",
 		"plugin.js",
 		"type.js",
-		"poki-sdk.js"
+		"instance.js"
 	]
 }

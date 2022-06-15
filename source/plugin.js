@@ -17,36 +17,37 @@
 	const PLUGIN_VERSION = "1.0.0.0";
 	const PLUGIN_CATEGORY = "platform-specific";
 	
-	const PLUGIN_CLASS = SDK.Plugins.eren_poki = class MyCustomPlugin extends SDK.IPluginBase
+	let app = null;
+	
+	const PLUGIN_CLASS = SDK.Plugins.eren_poki = class eren_pokiPlugin extends SDK.IPluginBase
 	{
 		constructor()
 		{
 			super(PLUGIN_ID);
 			
 			SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
-			this._info.SetIcon("icon.png", "image/png");
+			
 			this._info.SetName(self.lang(".name"));
 			this._info.SetDescription(self.lang(".description"));
+			this._info.SetIcon("icon.png", "image/png");
 			this._info.SetVersion(PLUGIN_VERSION);
 			this._info.SetCategory(PLUGIN_CATEGORY);
-			this._info.SetAuthor("Eren Ertugrul");
+			this._info.SetAuthor("Eren");
 			this._info.SetHelpUrl(self.lang(".help-url"));
 			this._info.SetIsSingleGlobal(true);
 			
 			// Only support the newer C3 runtime
-			this._info.SetSupportedRuntimes(["c2","c3"]);
+			this._info.SetSupportedRuntimes(["c3"]);
+			// Load domSide.js in the document context (main thread).
+			// This is important for supporting the runtime's web worker mode.
+			this._info.SetDOMSideScripts(["c3runtime/domSide.js"]);
 			
 			SDK.Lang.PushContext(".properties");
 			
 			this._info.SetProperties([
+				new SDK.PluginProperty("combo", "debug_mode", {initialValue:"true", items:["true","false"]})
 			]);
-			this._info.AddFileDependency({
-				filename: "poki-sdk.js",
-				type: "external-runtime-script"
-			});
-			this._info.SetProperties([
-				new SDK.PluginProperty("combo", "debug_mode", {initialValue:"true", items:["false","true"]})
-			]);
+			
 			SDK.Lang.PopContext();		// .properties
 			
 			SDK.Lang.PopContext();
@@ -55,58 +56,3 @@
 	
 	PLUGIN_CLASS.Register(PLUGIN_ID, PLUGIN_CLASS);
 }
-
-/*
-
-
-gameplaystart
-PokiSDK.gameplayStart();
-gameplaystop
-PokiSDK.gameplayStop();
-
-PokiSDK.muteAd();
-
-
-
-commercialBreak
-console.log('Begin of commercial break');
-PokiSDK.commercialBreak()
-	.then(function () {
-		console.log('End of commercial break');
-	});
-
-rewardedBreak
-console.log('Begin of rewarded break');
-PokiSDK.rewardedBreak()
-	.then(function(withReward) {
-		console.log('End of rewarded break, entitled for reward:', withReward);
-	});
-
-
-
-
-PokiSDK.happyTime(happyTimeIntensity.value / 100);
-
-
-PokiSDK.toggleNonPersonalized(true);
-
-
-PokiSDK.setConsentString('testconsentstringsetbysdk');
-
-
-PokiSDK.init().then(
-    () => {
-        console.log("Poki SDK successfully initialized");
-        // your code to continue to game
-        continueToGame();
-    }   
-).catch(
-    () => {
-        console.log("Initialized, but the user likely has adblock");
-        // your code to continue to game
-        continueToGame();
-    }   
-);
-PokiSDK.setDebug(true);
-
-*/

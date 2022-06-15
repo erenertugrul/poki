@@ -12,8 +12,8 @@
 						"name": "debug mode",
 						"desc": "this is necessary for ads to be shown in a local environment",
 						"items": {
-							"false":"False",
-							"true":"True"
+							"true":"True",
+							"false":"False"
 							}
 						}
 				},
@@ -26,7 +26,7 @@
 					"ad-finished": {
 						"list-name": "On Finished",
 						"display-text": "On Finished",
-						"description": "Triggered when an advertisement stops playing"
+						"description": "Triggered when an advertisement finished"
 					},
 					"ad-error": {
 						"list-name": "On Error",
@@ -37,25 +37,30 @@
 						"list-name": "Adblock Detection",
 						"display-text": "Adblock Detection",
 						"description": "Detect whether the user has installed an adblock tool"
+					},
+					"ad-init": {
+						"list-name": "On Init",
+						"display-text": "On Init",
+						"description": "Triggered when Poki SDK successfully initialized"
 					}
 				},
 				"actions": {
 					"show-ad": {
-						"list-name": "Commercial break",
+						"list-name": "commercialBreak",
 						"display-text": "commercialBreak",
-						"description": "Commercial breaks are used to display video ads and should be triggered on natural breaks in your game"
+						"description": "Commercial breaks are used to display video ads and should be triggered on natural breaks in your game."
 					},
 					"rewardedbreak": {
-						"list-name": "Rewarded breaks",
-						"display-text": "Rewarded breaks",
-						"description": "Rewarded breaks allow for a user to choose to watch a rewarded video ad in exchange for a certain benefit in the game"
+						"list-name": "rewardedBreak",
+						"display-text": "rewardedBreak",
+						"description": "Rewarded breaks allow for a user to choose to watch a rewarded video ad in exchange for a certain benefit in the game (e.g. more coins, etc.)"
 					},
 					"gameplay": {
-						"list-name": "Gameplay Track",
+						"list-name": "Gameplay Events",
 						"display-text": "{0}",
-						"description": "Track when and how users are playing your games",
+						"description": "Use gameplayStart level start and unpause. Use gameplayStop level finish, game over, pause, quit to menu",
 						"params": {
-							"gameplay": { "name":"gameplay", "desc":" gameplay track", "items":{"gameplayStart":"Gameplay Start","gameplayStop":"Gameplay Stop"}}
+							"gameplay": { "name":"gameplay", "desc":" gameplay event", "items":{"gameplayStart":"gameplayStart","gameplayStop":"gameplayStop"}}
 						}
 					},
 					"happytime": {
